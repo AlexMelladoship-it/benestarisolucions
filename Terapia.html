@@ -137,7 +137,7 @@
     /* Reveal: visible by default; JS adds animation */
     html.js-ready .reveal-anim { opacity: 0; transform: translateY(22px); transition: opacity .6s ease, transform .6s ease; }
     html.js-ready .reveal-anim.visible { opacity: 1; transform: translateY(0); }
-                        <!-- MOBILE-CSS-START -->
+                              <!-- MOBILE-CSS-START -->
     /* ═══════════════════════════════════════════════
        MOBILE NAVIGATION — HAMBURGER
     ═══════════════════════════════════════════════ */
@@ -220,9 +220,13 @@
       .mobile-menu { display: block; }
       .nav-links { display: none !important; }
 
-      /* Touch targets */
+      /* Touch targets (lang-btn excluded — kept compact in nav) */
       .btn-primary, .btn-outline, .btn-nav-cta,
-      .btn-submit, .lang-btn { min-height: 48px; }
+      .btn-submit { min-height: 48px; }
+
+      /* Lang toggle: slightly smaller on mobile */
+      .lang-toggle { padding: 2px; }
+      .lang-btn { min-height: auto !important; padding: 3px 9px !important; font-size: 11px !important; }
 
       /* Inputs: 16px prevents iOS auto-zoom */
       input, textarea, select {
@@ -272,8 +276,32 @@
       .cat-name { font-size: 15px; }
       .cat-desc { font-size: 13px; }
 
-      #qui-som { padding: clamp(40px,7vw,60px) clamp(18px,5vw,32px); gap: 32px; }
+      #qui-som { padding: clamp(40px,7vw,60px) clamp(18px,5vw,32px); gap: 24px; }
       .about-p { font-size: 15px; }
+
+      /* Show hero image stacked below text on mobile */
+      .hero-visual {
+        display: block !important;
+        width: 100%;
+      }
+      .hero-img-wrap {
+        aspect-ratio: 16/9 !important;
+        border-radius: 20px !important;
+        max-height: 220px;
+      }
+      .hero-float { display: none; }
+
+      /* Show qui-som image stacked below text on mobile */
+      .about-visual {
+        display: block !important;
+        width: 100%;
+      }
+      .about-decor-circle { display: none; }
+      .about-img-wrap {
+        aspect-ratio: 16/9 !important;
+        border-radius: 20px !important;
+        max-height: 200px;
+      }
 
       #serveis { padding: clamp(40px,7vw,60px) clamp(18px,5vw,32px); }
       .serv-card { padding: 24px 20px; border-radius: 16px; }
