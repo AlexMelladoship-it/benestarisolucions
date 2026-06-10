@@ -137,7 +137,7 @@
     /* Reveal: visible by default; JS adds animation */
     html.js-ready .reveal-anim { opacity: 0; transform: translateY(22px); transition: opacity .6s ease, transform .6s ease; }
     html.js-ready .reveal-anim.visible { opacity: 1; transform: translateY(0); }
-                  <!-- MOBILE-CSS-START -->
+                        <!-- MOBILE-CSS-START -->
     /* ═══════════════════════════════════════════════
        MOBILE NAVIGATION — HAMBURGER
     ═══════════════════════════════════════════════ */
@@ -375,17 +375,19 @@
       }
       .cat-tabs-bar::-webkit-scrollbar { display: none; }
       .ctab { white-space: nowrap; flex-shrink: 0; padding: 8px 14px; font-size: 13px; }
+      /* Always 2 columns on mobile — cards stay compact, never stretched */
       .prod-grid {
         grid-template-columns: 1fr 1fr !important;
-        gap: 12px;
-        padding: clamp(20px,5vw,36px) clamp(18px,5vw,32px);
+        gap: 10px;
+        padding: clamp(16px,4vw,28px) clamp(14px,4vw,28px);
       }
-      .prod-thumb { aspect-ratio: 1; }
-      .prod-thumb-name { font-size: 13px; padding: 10px 12px 4px; }
-      .prod-thumb-price { font-size: 13px; padding: 0 12px 12px; }
-    }
-    @media (max-width: 420px) {
-      .prod-grid { grid-template-columns: 1fr !important; }
+      /* Square image — balances nicely in 2-col grid */
+      .prod-thumb { aspect-ratio: 1 !important; }
+      /* Compact card body */
+      .prod-body { padding: 10px 10px 12px !important; gap: 5px !important; }
+      .prod-name { font-size: 11px !important; line-height: 1.3; }
+      .prod-price { font-size: 14px !important; }
+      .prod-cta { font-size: 11px !important; padding: 7px 10px !important; margin-top: 2px !important; }
     }
 
     /* ═══════════════════════════════════════════════
