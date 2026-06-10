@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /fix_*.py
+Disallow: /create_*.py
+Disallow: /seo_*.py
+
+Sitemap: https://www.benestarisolucions.com/sitemap.xml

@@ -1,0 +1,13 @@
+# Python helper scripts (only needed locally)
+fix_*.py
+create_*.py
+seo_*.py
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor folders
+.vscode/
+.idea/
