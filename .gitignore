@@ -2,6 +2,7 @@
 fix_*.py
 create_*.py
 seo_*.py
+mobile_*.py
 
 # OS files
 .DS_Store
