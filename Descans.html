@@ -149,7 +149,7 @@
     /* Reveal: visible by default; JS adds animation */
     html.js-ready .reveal-anim { opacity: 0; transform: translateY(22px); transition: opacity .6s ease, transform .6s ease; }
     html.js-ready .reveal-anim.visible { opacity: 1; transform: translateY(0); }
-                        <!-- MOBILE-CSS-START -->
+                              <!-- MOBILE-CSS-START -->
     /* ═══════════════════════════════════════════════
        MOBILE NAVIGATION — HAMBURGER
     ═══════════════════════════════════════════════ */
@@ -232,9 +232,13 @@
       .mobile-menu { display: block; }
       .nav-links { display: none !important; }
 
-      /* Touch targets */
+      /* Touch targets (lang-btn excluded — kept compact in nav) */
       .btn-primary, .btn-outline, .btn-nav-cta,
-      .btn-submit, .lang-btn { min-height: 48px; }
+      .btn-submit { min-height: 48px; }
+
+      /* Lang toggle: slightly smaller on mobile */
+      .lang-toggle { padding: 2px; }
+      .lang-btn { min-height: auto !important; padding: 3px 9px !important; font-size: 11px !important; }
 
       /* Inputs: 16px prevents iOS auto-zoom */
       input, textarea, select {
@@ -284,8 +288,32 @@
       .cat-name { font-size: 15px; }
       .cat-desc { font-size: 13px; }
 
-      #qui-som { padding: clamp(40px,7vw,60px) clamp(18px,5vw,32px); gap: 32px; }
+      #qui-som { padding: clamp(40px,7vw,60px) clamp(18px,5vw,32px); gap: 24px; }
       .about-p { font-size: 15px; }
+
+      /* Show hero image stacked below text on mobile */
+      .hero-visual {
+        display: block !important;
+        width: 100%;
+      }
+      .hero-img-wrap {
+        aspect-ratio: 16/9 !important;
+        border-radius: 20px !important;
+        max-height: 220px;
+      }
+      .hero-float { display: none; }
+
+      /* Show qui-som image stacked below text on mobile */
+      .about-visual {
+        display: block !important;
+        width: 100%;
+      }
+      .about-decor-circle { display: none; }
+      .about-img-wrap {
+        aspect-ratio: 16/9 !important;
+        border-radius: 20px !important;
+        max-height: 200px;
+      }
 
       #serveis { padding: clamp(40px,7vw,60px) clamp(18px,5vw,32px); }
       .serv-card { padding: 24px 20px; border-radius: 16px; }
@@ -537,7 +565,7 @@
       <div class="prod-thumb"><img src="IMG_DESCANSO/IMG_Colch%C3%B3n%20Biomineral%20Germanio/IMG_1.jpg" alt="Product" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit;" loading="lazy"></div>
       <div class="prod-body">
         <h3 class="prod-name">
-          <span class="lca">COLCHÓN BIOMINERAL GERMANIO</span><span class="les">COLCHÓN BIOMINERAL GERMANIO</span>
+          <span class="lca">MATALÀS BIOMINERAL GERMANI</span><span class="les">COLCHÓN BIOMINERAL GERMANIO</span>
         </h3>
         <p class="prod-desc">
           <span class="lca">Sistema de descans avançat que combina Germani, Jade, Grafen i Infraroig Llunyà per oferir una experiència de descans més confortable i reparadora.</span><span class="les">Sistema de descanso avanzado que combina Germanio, Jade, Grafeno e Infrarrojo Lejano para ofrecer una experiencia de descanso más confortable y reparadora.</span>
@@ -552,7 +580,7 @@
       <div class="prod-thumb"><img src="IMG_DESCANSO/IMG_Colch%C3%B3n%20Grafeno%20Visco%20Jade/IMG_0.png" alt="Product" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit;" loading="lazy"></div>
       <div class="prod-body">
         <h3 class="prod-name">
-          <span class="lca">COLCHÓN GRAFENO VISCO JADE</span><span class="les">COLCHÓN GRAFENO VISCO JADE</span>
+          <span class="lca">MATALÀS GRAFEN VISCO JADE</span><span class="les">COLCHÓN GRAFENO VISCO JADE</span>
         </h3>
         <p class="prod-desc">
           <span class="lca">L'última tecnologia aplicada al descans, combinant materials d'alta qualitat i minerals seleccionats per a un major confort i benestar.</span><span class="les">La última tecnología aplicada al descanso, combinando materiales de alta calidad y minerales seleccionados para un mayor confort y bienestar.</span>
@@ -567,7 +595,7 @@
       <div class="prod-thumb"><img src="IMG_DESCANSO/IMG_%20Sistema%20de%20descanso%20memory%20con%20andulaci%C3%B3n/IMG_1.png" alt="Product" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit;" loading="lazy"></div>
       <div class="prod-body">
         <h3 class="prod-name">
-          <span class="lca">SISTEMA DE DESCANSO MEMORY CON ANDULACIÓN</span><span class="les">SISTEMA DE DESCANSO MEMORY CON ANDULACIÓN</span>
+          <span class="lca">SISTEMA DE DESCANS MEMORY AMB ANDULACIÓ</span><span class="les">SISTEMA DE DESCANSO MEMORY CON ANDULACIÓN</span>
         </h3>
         <p class="prod-desc">
           <span class="lca">Sistema de descans dissenyat per afavorir la relaxació i proporcionar una agradable sensació de confort durant el descans.</span><span class="les">Sistema de descanso diseñado para favorecer la relajación y proporcionar una agradable sensación de confort durante el descanso.</span>
@@ -582,7 +610,7 @@
       <div class="prod-thumb"><img src="IMG_DESCANSO/IMG_Canap%C3%A9%20de%20madera/IMG_1.jpg" alt="Product" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit;" loading="lazy"></div>
       <div class="prod-body">
         <h3 class="prod-name">
-          <span class="lca">CANAPÉ DE MADERA</span><span class="les">CANAPÉ DE MADERA</span>
+          <span class="lca">CANAPÈ DE FUSTA</span><span class="les">CANAPÉ DE MADERA</span>
         </h3>
         <p class="prod-desc">
           <span class="lca">Elegant solució d'emmagatzematge que optimitza l'espai del teu dormitori sense renunciar al confort i la funcionalitat.</span><span class="les">Elegante solución de almacenamiento que optimiza el espacio de tu dormitorio sin renunciar al confort y la funcionalidad.</span>
@@ -597,7 +625,7 @@
       <div class="prod-thumb"><img src="IMG_DESCANSO/IMG_Base%20Tapizada%203D/IMG_1.jpg" alt="Product" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit;" loading="lazy"></div>
       <div class="prod-body">
         <h3 class="prod-name">
-          <span class="lca">BASE TAPIZADA 3D</span><span class="les">BASE TAPIZADA 3D</span>
+          <span class="lca">BASE TAPISSADA 3D</span><span class="les">BASE TAPIZADA 3D</span>
         </h3>
         <p class="prod-desc">
           <span class="lca">Base transpirable de gran resistència que proporciona una excel·lent estabilitat i suport per a qualsevol matalàs.</span><span class="les">Base transpirable de gran resistencia que proporciona una excelente estabilidad y soporte para cualquier colchón.</span>
@@ -612,7 +640,7 @@
       <div class="prod-thumb"><img src="IMG_DESCANSO/IMG_Canap%C3%A9%20con%20somier%20articulado/IMG_1.jpg" alt="Product" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit;" loading="lazy"></div>
       <div class="prod-body">
         <h3 class="prod-name">
-          <span class="lca">CANAPÉ CON SOMIER ARTICULADO</span><span class="les">CANAPÉ CON SOMIER ARTICULADO</span>
+          <span class="lca">CANAPÈ AMB SOMIER ARTICULAT</span><span class="les">CANAPÉ CON SOMIER ARTICULADO</span>
         </h3>
         <p class="prod-desc">
           <span class="lca">Combina la capacitat d'emmagatzematge d'un canapè amb la comoditat i versatilitat d'un somier articulat.</span><span class="les">Combina la capacidad de almacenamiento de un canapé con la comodidad y versatilidad de un somier articulado.</span>
@@ -627,7 +655,7 @@
       <div class="prod-thumb"><img src="IMG_DESCANSO/IMG_Somier%20Articulado%20Komfort/IMG_1.jpg" alt="Product" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit;" loading="lazy"></div>
       <div class="prod-body">
         <h3 class="prod-name">
-          <span class="lca">SOMIER ARTICULADO KOMFORT</span><span class="les">SOMIER ARTICULADO KOMFORT</span>
+          <span class="lca">SOMIER ARTICULAT KOMFORT</span><span class="les">SOMIER ARTICULADO KOMFORT</span>
         </h3>
         <p class="prod-desc">
           <span class="lca">Somier articulat elèctric dissenyat per adaptar-se a les teves necessitats de descans i millorar la teva comoditat diària.</span><span class="les">Somier articulado eléctrico diseñado para adaptarse a tus necesidades de descanso y mejorar tu comodidad diaria.</span>
@@ -642,7 +670,7 @@
       <div class="prod-thumb"><img src="IMG_DESCANSO/IMG_Sabana%20y%20funda%20Tencel%202%20en%201/IMG_1.jpg" alt="Product" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit;" loading="lazy"></div>
       <div class="prod-body">
         <h3 class="prod-name">
-          <span class="lca">SÁBANA Y FUNDA TENCEL 2 EN 1</span><span class="les">SÁBANA Y FUNDA TENCEL 2 EN 1</span>
+          <span class="lca">LLENÇOL I FUNDA TENCEL 2 EN 1</span><span class="les">SÁBANA Y FUNDA TENCEL 2 EN 1</span>
         </h3>
         <p class="prod-desc">
           <span class="lca">Protector i llençol ajustable en una sola peça, impermeable, transpirable i suau al tacte per a una major higiene i comoditat.</span><span class="les">Protector y sábana ajustable en una sola pieza, impermeable, transpirable y suave al tacto para una mayor higiene y comodidad.</span>
@@ -657,7 +685,7 @@
       <div class="prod-thumb"><img src="IMG_DESCANSO/IMG_%20Almohada%20Turmalina/IMG_1.png" alt="Product" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit;" loading="lazy"></div>
       <div class="prod-body">
         <h3 class="prod-name">
-          <span class="lca">ALMOHADA TURMALINA</span><span class="les">ALMOHADA TURMALINA</span>
+          <span class="lca">COIXÍ TURMALINA</span><span class="les">ALMOHADA TURMALINA</span>
         </h3>
         <p class="prod-desc">
           <span class="lca">Coixí de nova generació fabricat amb materials d'alta qualitat per proporcionar una sensació de confort superior.</span><span class="les">Almohada de nueva generación fabricada con materiales de alta calidad para proporcionar una sensación de confort superior.</span>
