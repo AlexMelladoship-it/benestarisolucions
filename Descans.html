@@ -149,6 +149,48 @@
     /* Reveal: visible by default; JS adds animation */
     html.js-ready .reveal-anim { opacity: 0; transform: translateY(22px); transition: opacity .6s ease, transform .6s ease; }
     html.js-ready .reveal-anim.visible { opacity: 1; transform: translateY(0); }
+                              
+    /* ── NAV DROPDOWN (desktop) ──────────────────── */
+    .nav-has-dropdown { position: relative; }
+    .nav-has-dropdown > a { display: flex; align-items: center; gap: 4px; }
+    .nav-chevron { font-size: 10px; display: inline-block; transition: transform .2s; }
+    .nav-has-dropdown:hover .nav-chevron,
+    .nav-has-dropdown:focus-within .nav-chevron { transform: rotate(180deg); }
+    .nav-dropdown {
+      position: absolute; top: calc(100% + 10px); left: 50%;
+      transform: translateX(-50%) translateY(-6px);
+      background: white; border: 1px solid var(--border);
+      border-radius: 14px; padding: 6px;
+      box-shadow: 0 10px 36px rgba(0,0,0,.11);
+      min-width: 210px;
+      opacity: 0; pointer-events: none;
+      transition: opacity .18s, transform .18s;
+      z-index: 200;
+    }
+    .nav-has-dropdown:hover .nav-dropdown,
+    .nav-has-dropdown:focus-within .nav-dropdown {
+      opacity: 1; pointer-events: auto;
+      transform: translateX(-50%) translateY(0);
+    }
+    .nav-dropdown a {
+      display: flex; align-items: center; gap: 10px;
+      padding: 9px 13px; border-radius: 9px;
+      font-size: 14px; font-weight: 500;
+      color: var(--text-mid) !important; text-decoration: none;
+      background: transparent;
+      transition: background .15s, color .15s;
+    }
+    .nav-dropdown a:hover { background: var(--green-light); color: var(--green) !important; }
+    .nav-dropdown-icon {
+      width: 28px; height: 28px; border-radius: 7px;
+      background: var(--green-light);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    @media (min-width: 769px) {
+      .nav-mobile-btn { display: none !important; }
+      .mobile-menu { display: none !important; }
+    }
                               <!-- MOBILE-CSS-START -->
     /* ═══════════════════════════════════════════════
        MOBILE NAVIGATION — HAMBURGER
@@ -465,7 +507,27 @@
   <ul class="nav-links">
     <li><a href="Benestari Solucions.html#qui-som"><span class="lca">Qui som</span><span class="les">Quiénes somos</span></a></li>
     <li><a href="Benestari Solucions.html#serveis"><span class="lca">Serveis</span><span class="les">Servicios</span></a></li>
-    <li><a href="Benestari Solucions.html#categories" class="active"><span class="lca">Productes</span><span class="les">Productos</span></a></li>
+    <li class="nav-has-dropdown">
+      <a href="Benestari Solucions.html#categories"><span class="lca">Productes</span><span class="les">Productos</span> <span class="nav-chevron">▾</span></a>
+      <div class="nav-dropdown">
+        <a href="Descans.html">
+          <span class="nav-dropdown-icon"><svg width="14" height="14" fill="none" stroke="var(--green)" stroke-width="2" viewBox="0 0 24 24"><path d="M2 9a3 3 0 0 1 3-3h14a3 3 0 0 1 3 3v9H2V9z"/><path d="M2 18h20v2H2z"/></svg></span>
+          <span class="lca">Descans</span><span class="les">Descanso</span>
+        </a>
+        <a href="Terapia.html">
+          <span class="nav-dropdown-icon"><svg width="14" height="14" fill="none" stroke="var(--green)" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2z"/><path d="M12 6v6l4 2"/></svg></span>
+          <span class="lca">Teràpia</span><span class="les">Terapia</span>
+        </a>
+        <a href="Aigua-Aire.html">
+          <span class="nav-dropdown-icon"><svg width="14" height="14" fill="none" stroke="var(--green)" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2C6 8 4 12 4 14a8 8 0 0 0 16 0c0-2-2-6-8-12z"/></svg></span>
+          <span class="lca">Aigua i Tractament</span><span class="les">Agua y Tratamiento</span>
+        </a>
+        <a href="Llar.html">
+          <span class="nav-dropdown-icon"><svg width="14" height="14" fill="none" stroke="var(--green)" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
+          <span class="lca">Llar</span><span class="les">Hogar</span>
+        </a>
+      </div>
+    </li>
     <li><a href="Benestari Solucions.html#blog">Blog</a></li>
     <li><a href="Benestari Solucions.html#contacte"><span class="lca">Contacte</span><span class="les">Contacto</span></a></li>
   </ul>
@@ -485,42 +547,42 @@
 <!-- MOBILE-MENU-START -->
 <div class="mobile-menu" id="mobileMenu">
   <a href="Benestari%20Solucions.html#qui-som" class="mobile-menu-link lca">Qui som</a>
-  <a href="Benestari%20Solucions.html#qui-som" class="mobile-menu-link les" style="display:none">Quiénes somos</a>
+  <a href="Benestari%20Solucions.html#qui-som" class="mobile-menu-link les">Quiénes somos</a>
 
   <a href="Benestari%20Solucions.html#serveis" class="mobile-menu-link lca">Serveis</a>
-  <a href="Benestari%20Solucions.html#serveis" class="mobile-menu-link les" style="display:none">Servicios</a>
+  <a href="Benestari%20Solucions.html#serveis" class="mobile-menu-link les">Servicios</a>
 
   <div>
     <button class="mobile-prod-toggle" id="mobileProdBtn">
-      <span class="lca">Productes</span><span class="les" style="display:none">Productos</span>
+      <span class="lca">Productes</span><span class="les">Productos</span>
       <span class="mobile-prod-chevron">▾</span>
     </button>
     <div class="mobile-prod-sub" id="mobileProdSub">
       <a href="Descans.html">
         <span class="nav-dropdown-icon"><svg width="13" height="13" fill="none" stroke="var(--green)" stroke-width="2" viewBox="0 0 24 24"><path d="M2 9a3 3 0 0 1 3-3h14a3 3 0 0 1 3 3v9H2V9z"/><path d="M2 18h20v2H2z"/></svg></span>
-        <span class="lca">Descans</span><span class="les" style="display:none">Descanso</span>
+        <span class="lca">Descans</span><span class="les">Descanso</span>
       </a>
       <a href="Terapia.html">
         <span class="nav-dropdown-icon"><svg width="13" height="13" fill="none" stroke="var(--green)" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2z"/><path d="M12 6v6l4 2"/></svg></span>
-        <span class="lca">Teràpia</span><span class="les" style="display:none">Terapia</span>
+        <span class="lca">Teràpia</span><span class="les">Terapia</span>
       </a>
       <a href="Aigua-Aire.html">
         <span class="nav-dropdown-icon"><svg width="13" height="13" fill="none" stroke="var(--green)" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2C6 8 4 12 4 14a8 8 0 0 0 16 0c0-2-2-6-8-12z"/></svg></span>
-        <span class="lca">Aigua i Tractament</span><span class="les" style="display:none">Agua y Tratamiento</span>
+        <span class="lca">Aigua i Tractament</span><span class="les">Agua y Tratamiento</span>
       </a>
       <a href="Llar.html">
         <span class="nav-dropdown-icon"><svg width="13" height="13" fill="none" stroke="var(--green)" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
-        <span class="lca">Llar</span><span class="les" style="display:none">Hogar</span>
+        <span class="lca">Llar</span><span class="les">Hogar</span>
       </a>
     </div>
   </div>
 
   <a href="Benestari%20Solucions.html#blog" class="mobile-menu-link">Blog</a>
   <a href="Benestari%20Solucions.html#contacte" class="mobile-menu-link lca">Contacte</a>
-  <a href="Benestari%20Solucions.html#contacte" class="mobile-menu-link les" style="display:none">Contacto</a>
+  <a href="Benestari%20Solucions.html#contacte" class="mobile-menu-link les">Contacto</a>
 
   <a href="Benestari%20Solucions.html#contacte" class="mobile-menu-cta">
-    <span class="lca">Contacta'ns</span><span class="les" style="display:none">Contáctanos</span>
+    <span class="lca">Contacta'ns</span><span class="les">Contáctanos</span>
   </a>
 </div>
 <!-- MOBILE-MENU-END -->
@@ -561,114 +623,102 @@
     <span class="les">9 productos disponibles</span>
   </p>
   <div class="prod-grid">
-      <a href="producto-colchon-graphen-gold.html" class="prod-card reveal">
-        <div class="prod-thumb"><img src="IMG_DESCANSO/IMG_Colch%C3%B3n%20Graphen%20Gold/IMG_1.jpg" alt="COLCHÓN GRAPHEN GOLD" style="width:100%;height:100%;object-fit:contain;background:#f5f5f3;display:block;" loading="lazy"></div>
+      <article class="prod-card reveal">
+        <div class="prod-thumb"><img src="IMG_DESCANSO/IMG_Colch%C3%B3n%20Graphen%20Gold/IMG_1.jpg" alt="COLCHÓN GRAPHEN GOLD" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit;" loading="lazy"></div>
         <div class="prod-body">
           <h3 class="prod-name"><span class="lca">MATALÀS GRAPHEN GOLD</span><span class="les">COLCHÓN GRAPHEN GOLD</span></h3>
-          <div class="prod-price">des de 1.595 €</div>
-          <a href="producto-colchon-graphen-gold.html" class="prod-cta lca">Veure producte &#8594;</a>
-          <a href="producto-colchon-graphen-gold.html" class="prod-cta les">Ver producto &#8594;</a>
+          <p class="prod-desc"><span class="lca">Viscoelàstica amb grafè. Sistema dual 2 cares / 2 fermetats per adaptar-se a cada necessitat.</span><span class="les">Viscoelástica con grafeno. Sistema dual 2 caras / 2 firmezas para adaptarse a cada necesidad.</span></p>
+          <a href="producto-colchon-graphen-gold.html" class="prod-cta"><span class="lca">Veure producte</span><span class="les">Ver producto</span><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         </div>
-      </a>
-      <a href="producto-colchon-viscopremium-evolution.html" class="prod-card reveal">
-        <div class="prod-thumb"><img src="IMG_DESCANSO/IMG_New%20Viscopremium%20Evolution/IMG_1.jpg" alt="COLCHÓN VISCOPREMIUM EVOLUTION" style="width:100%;height:100%;object-fit:contain;background:#f5f5f3;display:block;" loading="lazy"></div>
+      </article>
+      <article class="prod-card reveal">
+        <div class="prod-thumb"><img src="IMG_DESCANSO/IMG_New%20Viscopremium%20Evolution/IMG_1.jpg" alt="COLCHÓN VISCOPREMIUM EVOLUTION" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit;" loading="lazy"></div>
         <div class="prod-body">
           <h3 class="prod-name"><span class="lca">MATALÀS VISCOPREMIUM EVOLUTION</span><span class="les">COLCHÓN VISCOPREMIUM EVOLUTION</span></h3>
-          <div class="prod-price">des de 2.195 €</div>
-          <a href="producto-colchon-viscopremium-evolution.html" class="prod-cta lca">Veure producte &#8594;</a>
-          <a href="producto-colchon-viscopremium-evolution.html" class="prod-cta les">Ver producto &#8594;</a>
+          <p class="prod-desc"><span class="lca">Tractament Intense per alliberar l'electricitat estàtica. Afavoreix un descans profund i reparador.</span><span class="les">Tratamiento Intense para liberar la electricidad estática. Favorece un descanso profundo y reparador.</span></p>
+          <a href="producto-colchon-viscopremium-evolution.html" class="prod-cta"><span class="lca">Veure producte</span><span class="les">Ver producto</span><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         </div>
-      </a>
-      <a href="producto-almohada-viscopremium.html" class="prod-card reveal">
-        <div class="prod-thumb"><img src="IMG_DESCANSO/IMG_ALMOHADA%20Viscopremiu/IMG_1.jpg" alt="ALMOHADA VISCOPREMIUM" style="width:100%;height:100%;object-fit:contain;background:#f5f5f3;display:block;" loading="lazy"></div>
+      </article>
+      <article class="prod-card reveal">
+        <div class="prod-thumb"><img src="IMG_DESCANSO/IMG_ALMOHADA%20Viscopremiu/IMG_1.jpg" alt="ALMOHADA VISCOPREMIUM" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit;" loading="lazy"></div>
         <div class="prod-body">
           <h3 class="prod-name"><span class="lca">COIXÍ VISCOPREMIUM</span><span class="les">ALMOHADA VISCOPREMIUM</span></h3>
-          <div class="prod-price">des de 149 €</div>
-          <a href="producto-almohada-viscopremium.html" class="prod-cta lca">Veure producte &#8594;</a>
-          <a href="producto-almohada-viscopremium.html" class="prod-cta les">Ver producto &#8594;</a>
+          <p class="prod-desc"><span class="lca">Viscoelàstica d'origen espacial (NASA) amb teixit Intense. Suport ergonòmic per als cervicals.</span><span class="les">Viscoelástica de origen espacial (NASA) con tejido Intense. Soporte ergonómico para cervicales.</span></p>
+          <a href="producto-almohada-viscopremium.html" class="prod-cta"><span class="lca">Veure producte</span><span class="les">Ver producto</span><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         </div>
-      </a>
-      <a href="producto-scudo-protection-plus.html" class="prod-card reveal">
-        <div class="prod-thumb"><img src="IMG_DESCANSO/IMG_SCUDO%20Protection%20Plus/IMG_1.jpg" alt="SCUDO PROTECTION PLUS" style="width:100%;height:100%;object-fit:contain;background:#f5f5f3;display:block;" loading="lazy"></div>
+      </article>
+      <article class="prod-card reveal">
+        <div class="prod-thumb"><img src="IMG_DESCANSO/IMG_SCUDO%20Protection%20Plus/IMG_1.jpg" alt="SCUDO PROTECTION PLUS" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit;" loading="lazy"></div>
         <div class="prod-body">
           <h3 class="prod-name"><span class="lca">SCUDO PROTECTION PLUS</span><span class="les">SCUDO PROTECTION PLUS</span></h3>
-          
-          <a href="producto-scudo-protection-plus.html" class="prod-cta lca">Veure producte &#8594;</a>
-          <a href="producto-scudo-protection-plus.html" class="prod-cta les">Ver producto &#8594;</a>
+          <p class="prod-desc"><span class="lca">Protecció electromagnètica per al punt de descans. Tecnologia SCUDO® per a un son més profund.</span><span class="les">Protección electromagnética para el punto de descanso. Tecnología SCUDO® para un sueño más profundo.</span></p>
+          <a href="producto-scudo-protection-plus.html" class="prod-cta"><span class="lca">Veure producte</span><span class="les">Ver producto</span><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         </div>
-      </a>
-      <a href="producto-topper-turmalink-cool.html" class="prod-card reveal">
-        <div class="prod-thumb"><img src="IMG_DESCANSO/IMG_Topper%20Turmalink%20Cool/IMG_1.jpg" alt="TOPPER TURMALINK COOL" style="width:100%;height:100%;object-fit:contain;background:#f5f5f3;display:block;" loading="lazy"></div>
+      </article>
+      <article class="prod-card reveal">
+        <div class="prod-thumb"><img src="IMG_DESCANSO/IMG_Topper%20Turmalink%20Cool/IMG_1.jpg" alt="TOPPER TURMALINK COOL" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit;" loading="lazy"></div>
         <div class="prod-body">
           <h3 class="prod-name"><span class="lca">TOPPER TURMALINK COOL</span><span class="les">TOPPER TURMALINK COOL</span></h3>
-          
-          <a href="producto-topper-turmalink-cool.html" class="prod-cta lca">Veure producte &#8594;</a>
-          <a href="producto-topper-turmalink-cool.html" class="prod-cta les">Ver producto &#8594;</a>
+          <p class="prod-desc"><span class="lca">Sistema dual turmalina + Tencel Cooling. Emissió iònica certificada per AITEX.</span><span class="les">Sistema dual turmalina + Tencel Cooling. Emisión iónica certificada por AITEX.</span></p>
+          <a href="producto-topper-turmalink-cool.html" class="prod-cta"><span class="lca">Veure producte</span><span class="les">Ver producto</span><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         </div>
-      </a>
-      <a href="producto-edredon-turmalink-protect.html" class="prod-card reveal">
-        <div class="prod-thumb"><img src="IMG_DESCANSO/IMG_Edred%C3%B3n%20Max%20Turmalina/IMG_1.jpg" alt="EDREDÓN TURMALINK PROTECT" style="width:100%;height:100%;object-fit:contain;background:#f5f5f3;display:block;" loading="lazy"></div>
+      </article>
+      <article class="prod-card reveal">
+        <div class="prod-thumb"><img src="IMG_DESCANSO/IMG_Edred%C3%B3n%20Max%20Turmalina/IMG_1.jpg" alt="EDREDÓN TURMALINK PROTECT" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit;" loading="lazy"></div>
         <div class="prod-body">
           <h3 class="prod-name"><span class="lca">EDREDÓ TURMALINK PROTECT</span><span class="les">EDREDÓN TURMALINK PROTECT</span></h3>
-          <div class="prod-price">699 €</div>
-          <a href="producto-edredon-turmalink-protect.html" class="prod-cta lca">Veure producte &#8594;</a>
-          <a href="producto-edredon-turmalink-protect.html" class="prod-cta les">Ver producto &#8594;</a>
+          <p class="prod-desc"><span class="lca">Micropartícules de turmalina que generen ions negatius i radiació infraroja per al teu benestar.</span><span class="les">Micropartículas de turmalina que generan iones negativos y radiación infrarroja para tu bienestar.</span></p>
+          <a href="producto-edredon-turmalink-protect.html" class="prod-cta"><span class="lca">Veure producte</span><span class="les">Ver producto</span><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         </div>
-      </a>
-      <a href="producto-canape-de-madera.html" class="prod-card reveal">
-        <div class="prod-thumb"><img src="IMG_DESCANSO/IMG_Canap%C3%A9%20de%20madera/IMG_1.jpg" alt="CANAPÉ DE MADERA" style="width:100%;height:100%;object-fit:contain;background:#f5f5f3;display:block;" loading="lazy"></div>
+      </article>
+      <article class="prod-card reveal">
+        <div class="prod-thumb"><img src="IMG_DESCANSO/IMG_Canap%C3%A9%20de%20madera/IMG_1.jpg" alt="CANAPÉ DE MADERA" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit;" loading="lazy"></div>
         <div class="prod-body">
           <h3 class="prod-name"><span class="lca">CANAPÈ DE FUSTA</span><span class="les">CANAPÉ DE MADERA</span></h3>
-          
-          <a href="producto-canape-de-madera.html" class="prod-cta lca">Veure producte &#8594;</a>
-          <a href="producto-canape-de-madera.html" class="prod-cta les">Ver producto &#8594;</a>
+          <p class="prod-desc"><span class="lca">Canapè de fusta d'alta resistència amb tapa abatible. Màxim aprofitament de l'espai.</span><span class="les">Canapé de madera de alta resistencia con tapa abatible. Máximo aprovechamiento del espacio.</span></p>
+          <a href="producto-canape-de-madera.html" class="prod-cta"><span class="lca">Veure producte</span><span class="les">Ver producto</span><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         </div>
-      </a>
-      <a href="producto-base-tapizada-3d.html" class="prod-card reveal">
-        <div class="prod-thumb"><img src="IMG_DESCANSO/IMG_Base%20Tapizada%203D/IMG_1.jpg" alt="BASE TAPIZADA 3D" style="width:100%;height:100%;object-fit:contain;background:#f5f5f3;display:block;" loading="lazy"></div>
+      </article>
+      <article class="prod-card reveal">
+        <div class="prod-thumb"><img src="IMG_DESCANSO/IMG_Base%20Tapizada%203D/IMG_1.jpg" alt="BASE TAPIZADA 3D" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit;" loading="lazy"></div>
         <div class="prod-body">
           <h3 class="prod-name"><span class="lca">BASE TAPISSADA 3D</span><span class="les">BASE TAPIZADA 3D</span></h3>
-          
-          <a href="producto-base-tapizada-3d.html" class="prod-cta lca">Veure producte &#8594;</a>
-          <a href="producto-base-tapizada-3d.html" class="prod-cta les">Ver producto &#8594;</a>
+          <p class="prod-desc"><span class="lca">Base tapissada amb teixit 3D transpirable. Disseny elegant i suport òptim per al matalàs.</span><span class="les">Base tapizada con tejido 3D transpirable. Diseño elegante y soporte óptimo para el colchón.</span></p>
+          <a href="producto-base-tapizada-3d.html" class="prod-cta"><span class="lca">Veure producte</span><span class="les">Ver producto</span><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         </div>
-      </a>
-      <a href="producto-canape-con-somier-articulado.html" class="prod-card reveal">
-        <div class="prod-thumb"><img src="IMG_DESCANSO/IMG_Canap%C3%A9%20con%20somier%20articulado/IMG_1.jpg" alt="CANAPÉ CON SOMIER ARTICULADO" style="width:100%;height:100%;object-fit:contain;background:#f5f5f3;display:block;" loading="lazy"></div>
+      </article>
+      <article class="prod-card reveal">
+        <div class="prod-thumb"><img src="IMG_DESCANSO/IMG_Canap%C3%A9%20con%20somier%20articulado/IMG_1.jpg" alt="CANAPÉ CON SOMIER ARTICULADO" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit;" loading="lazy"></div>
         <div class="prod-body">
           <h3 class="prod-name"><span class="lca">CANAPÈ AMB SOMIER ARTICULAT</span><span class="les">CANAPÉ CON SOMIER ARTICULADO</span></h3>
-          
-          <a href="producto-canape-con-somier-articulado.html" class="prod-cta lca">Veure producte &#8594;</a>
-          <a href="producto-canape-con-somier-articulado.html" class="prod-cta les">Ver producto &#8594;</a>
+          <p class="prod-desc"><span class="lca">Canapè amb somier articulat integrat. Emmagatzematge i regulació de posicions en un sol moble.</span><span class="les">Canapé con somier articulado integrado. Almacenaje y regulación de posiciones en un solo mueble.</span></p>
+          <a href="producto-canape-con-somier-articulado.html" class="prod-cta"><span class="lca">Veure producte</span><span class="les">Ver producto</span><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         </div>
-      </a>
-      <a href="producto-somier-articulado-komfort.html" class="prod-card reveal">
-        <div class="prod-thumb"><img src="IMG_DESCANSO/IMG_Somier%20Articulado%20Komfort/IMG_1.jpg" alt="SOMIER ARTICULADO KOMFORT" style="width:100%;height:100%;object-fit:contain;background:#f5f5f3;display:block;" loading="lazy"></div>
+      </article>
+      <article class="prod-card reveal">
+        <div class="prod-thumb"><img src="IMG_DESCANSO/IMG_Somier%20Articulado%20Komfort/IMG_1.jpg" alt="SOMIER ARTICULADO KOMFORT" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit;" loading="lazy"></div>
         <div class="prod-body">
           <h3 class="prod-name"><span class="lca">SOMIER ARTICULAT KOMFORT</span><span class="les">SOMIER ARTICULADO KOMFORT</span></h3>
-          
-          <a href="producto-somier-articulado-komfort.html" class="prod-cta lca">Veure producte &#8594;</a>
-          <a href="producto-somier-articulado-komfort.html" class="prod-cta les">Ver producto &#8594;</a>
+          <p class="prod-desc"><span class="lca">Somier articulat de làmines flexibles. Regulació manual per adaptar el suport a les teves necessitats.</span><span class="les">Somier articulado de láminas flexibles. Regulación manual para adaptar el soporte a tus necesidades.</span></p>
+          <a href="producto-somier-articulado-komfort.html" class="prod-cta"><span class="lca">Veure producte</span><span class="les">Ver producto</span><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         </div>
-      </a>
-      <a href="producto-sabana-y-funda-tencel-2-en-1.html" class="prod-card reveal">
-        <div class="prod-thumb"><img src="IMG_DESCANSO/IMG_Sabana%20y%20funda%20Tencel%202%20en%201/IMG_1.jpg" alt="SÁBANA Y FUNDA TENCEL 2 EN 1" style="width:100%;height:100%;object-fit:contain;background:#f5f5f3;display:block;" loading="lazy"></div>
+      </article>
+      <article class="prod-card reveal">
+        <div class="prod-thumb"><img src="IMG_DESCANSO/IMG_Sabana%20y%20funda%20Tencel%202%20en%201/IMG_1.jpg" alt="SÁBANA Y FUNDA TENCEL 2 EN 1" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit;" loading="lazy"></div>
         <div class="prod-body">
           <h3 class="prod-name"><span class="lca">LLENÇOL I FUNDA TENCEL 2 EN 1</span><span class="les">SÁBANA Y FUNDA TENCEL 2 EN 1</span></h3>
-          
-          <a href="producto-sabana-y-funda-tencel-2-en-1.html" class="prod-cta lca">Veure producte &#8594;</a>
-          <a href="producto-sabana-y-funda-tencel-2-en-1.html" class="prod-cta les">Ver producto &#8594;</a>
+          <p class="prod-desc"><span class="lca">Teixit TENCEL™ suau i transpirable. Disseny 2 en 1 que facilita la posada i el manteniment.</span><span class="les">Tejido TENCEL™ suave y transpirable. Diseño 2 en 1 que facilita la puesta y el mantenimiento.</span></p>
+          <a href="producto-sabana-y-funda-tencel-2-en-1.html" class="prod-cta"><span class="lca">Veure producte</span><span class="les">Ver producto</span><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         </div>
-      </a>
-      <a href="producto-almohada-turmalina.html" class="prod-card reveal">
-        <div class="prod-thumb"><img src="IMG_DESCANSO/IMG_%20Almohada%20Turmalina/IMG_1.jpg" alt="ALMOHADA TURMALINA" style="width:100%;height:100%;object-fit:contain;background:#f5f5f3;display:block;" loading="lazy"></div>
+      </article>
+      <article class="prod-card reveal">
+        <div class="prod-thumb"><img src="IMG_DESCANSO/IMG_%20Almohada%20Turmalina/IMG_1.png" alt="ALMOHADA TURMALINA" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit;" loading="lazy"></div>
         <div class="prod-body">
           <h3 class="prod-name"><span class="lca">COIXÍ TURMALINA</span><span class="les">ALMOHADA TURMALINA</span></h3>
-          
-          <a href="producto-almohada-turmalina.html" class="prod-cta lca">Veure producte &#8594;</a>
-          <a href="producto-almohada-turmalina.html" class="prod-cta les">Ver producto &#8594;</a>
+          <p class="prod-desc"><span class="lca">Coixí amb micropartícules de turmalina per generar ions negatius i afavorir un son reparador.</span><span class="les">Almohada con micropartículas de turmalina para generar iones negativos y favorecer un sueño reparador.</span></p>
+          <a href="producto-almohada-turmalina.html" class="prod-cta"><span class="lca">Veure producte</span><span class="les">Ver producto</span><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         </div>
-      </a>
+      </article>
     </div>
     </section>
 

@@ -137,6 +137,48 @@
     /* Reveal: visible by default; JS adds animation */
     html.js-ready .reveal-anim { opacity: 0; transform: translateY(22px); transition: opacity .6s ease, transform .6s ease; }
     html.js-ready .reveal-anim.visible { opacity: 1; transform: translateY(0); }
+                              
+    /* ── NAV DROPDOWN (desktop) ──────────────────── */
+    .nav-has-dropdown { position: relative; }
+    .nav-has-dropdown > a { display: flex; align-items: center; gap: 4px; }
+    .nav-chevron { font-size: 10px; display: inline-block; transition: transform .2s; }
+    .nav-has-dropdown:hover .nav-chevron,
+    .nav-has-dropdown:focus-within .nav-chevron { transform: rotate(180deg); }
+    .nav-dropdown {
+      position: absolute; top: calc(100% + 10px); left: 50%;
+      transform: translateX(-50%) translateY(-6px);
+      background: white; border: 1px solid var(--border);
+      border-radius: 14px; padding: 6px;
+      box-shadow: 0 10px 36px rgba(0,0,0,.11);
+      min-width: 210px;
+      opacity: 0; pointer-events: none;
+      transition: opacity .18s, transform .18s;
+      z-index: 200;
+    }
+    .nav-has-dropdown:hover .nav-dropdown,
+    .nav-has-dropdown:focus-within .nav-dropdown {
+      opacity: 1; pointer-events: auto;
+      transform: translateX(-50%) translateY(0);
+    }
+    .nav-dropdown a {
+      display: flex; align-items: center; gap: 10px;
+      padding: 9px 13px; border-radius: 9px;
+      font-size: 14px; font-weight: 500;
+      color: var(--text-mid) !important; text-decoration: none;
+      background: transparent;
+      transition: background .15s, color .15s;
+    }
+    .nav-dropdown a:hover { background: var(--green-light); color: var(--green) !important; }
+    .nav-dropdown-icon {
+      width: 28px; height: 28px; border-radius: 7px;
+      background: var(--green-light);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    @media (min-width: 769px) {
+      .nav-mobile-btn { display: none !important; }
+      .mobile-menu { display: none !important; }
+    }
                               <!-- MOBILE-CSS-START -->
     /* ═══════════════════════════════════════════════
        MOBILE NAVIGATION — HAMBURGER
@@ -453,7 +495,27 @@
   <ul class="nav-links">
     <li><a href="Benestari Solucions.html#qui-som"><span class="lca">Qui som</span><span class="les">Quiénes somos</span></a></li>
     <li><a href="Benestari Solucions.html#serveis"><span class="lca">Serveis</span><span class="les">Servicios</span></a></li>
-    <li><a href="Terapia.html" class="active"><span class="lca">Productes</span><span class="les">Productos</span></a></li>
+    <li class="nav-has-dropdown">
+      <a href="Benestari Solucions.html#categories"><span class="lca">Productes</span><span class="les">Productos</span> <span class="nav-chevron">▾</span></a>
+      <div class="nav-dropdown">
+        <a href="Descans.html">
+          <span class="nav-dropdown-icon"><svg width="14" height="14" fill="none" stroke="var(--green)" stroke-width="2" viewBox="0 0 24 24"><path d="M2 9a3 3 0 0 1 3-3h14a3 3 0 0 1 3 3v9H2V9z"/><path d="M2 18h20v2H2z"/></svg></span>
+          <span class="lca">Descans</span><span class="les">Descanso</span>
+        </a>
+        <a href="Terapia.html">
+          <span class="nav-dropdown-icon"><svg width="14" height="14" fill="none" stroke="var(--green)" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2z"/><path d="M12 6v6l4 2"/></svg></span>
+          <span class="lca">Teràpia</span><span class="les">Terapia</span>
+        </a>
+        <a href="Aigua-Aire.html">
+          <span class="nav-dropdown-icon"><svg width="14" height="14" fill="none" stroke="var(--green)" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2C6 8 4 12 4 14a8 8 0 0 0 16 0c0-2-2-6-8-12z"/></svg></span>
+          <span class="lca">Aigua i Tractament</span><span class="les">Agua y Tratamiento</span>
+        </a>
+        <a href="Llar.html">
+          <span class="nav-dropdown-icon"><svg width="14" height="14" fill="none" stroke="var(--green)" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
+          <span class="lca">Llar</span><span class="les">Hogar</span>
+        </a>
+      </div>
+    </li>
     <li><a href="Benestari Solucions.html#blog">Blog</a></li>
     <li><a href="Benestari Solucions.html#contacte"><span class="lca">Contacte</span><span class="les">Contacto</span></a></li>
   </ul>
@@ -473,42 +535,42 @@
 <!-- MOBILE-MENU-START -->
 <div class="mobile-menu" id="mobileMenu">
   <a href="Benestari%20Solucions.html#qui-som" class="mobile-menu-link lca">Qui som</a>
-  <a href="Benestari%20Solucions.html#qui-som" class="mobile-menu-link les" style="display:none">Quiénes somos</a>
+  <a href="Benestari%20Solucions.html#qui-som" class="mobile-menu-link les">Quiénes somos</a>
 
   <a href="Benestari%20Solucions.html#serveis" class="mobile-menu-link lca">Serveis</a>
-  <a href="Benestari%20Solucions.html#serveis" class="mobile-menu-link les" style="display:none">Servicios</a>
+  <a href="Benestari%20Solucions.html#serveis" class="mobile-menu-link les">Servicios</a>
 
   <div>
     <button class="mobile-prod-toggle" id="mobileProdBtn">
-      <span class="lca">Productes</span><span class="les" style="display:none">Productos</span>
+      <span class="lca">Productes</span><span class="les">Productos</span>
       <span class="mobile-prod-chevron">▾</span>
     </button>
     <div class="mobile-prod-sub" id="mobileProdSub">
       <a href="Descans.html">
         <span class="nav-dropdown-icon"><svg width="13" height="13" fill="none" stroke="var(--green)" stroke-width="2" viewBox="0 0 24 24"><path d="M2 9a3 3 0 0 1 3-3h14a3 3 0 0 1 3 3v9H2V9z"/><path d="M2 18h20v2H2z"/></svg></span>
-        <span class="lca">Descans</span><span class="les" style="display:none">Descanso</span>
+        <span class="lca">Descans</span><span class="les">Descanso</span>
       </a>
       <a href="Terapia.html">
         <span class="nav-dropdown-icon"><svg width="13" height="13" fill="none" stroke="var(--green)" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2z"/><path d="M12 6v6l4 2"/></svg></span>
-        <span class="lca">Teràpia</span><span class="les" style="display:none">Terapia</span>
+        <span class="lca">Teràpia</span><span class="les">Terapia</span>
       </a>
       <a href="Aigua-Aire.html">
         <span class="nav-dropdown-icon"><svg width="13" height="13" fill="none" stroke="var(--green)" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2C6 8 4 12 4 14a8 8 0 0 0 16 0c0-2-2-6-8-12z"/></svg></span>
-        <span class="lca">Aigua i Tractament</span><span class="les" style="display:none">Agua y Tratamiento</span>
+        <span class="lca">Aigua i Tractament</span><span class="les">Agua y Tratamiento</span>
       </a>
       <a href="Llar.html">
         <span class="nav-dropdown-icon"><svg width="13" height="13" fill="none" stroke="var(--green)" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
-        <span class="lca">Llar</span><span class="les" style="display:none">Hogar</span>
+        <span class="lca">Llar</span><span class="les">Hogar</span>
       </a>
     </div>
   </div>
 
   <a href="Benestari%20Solucions.html#blog" class="mobile-menu-link">Blog</a>
   <a href="Benestari%20Solucions.html#contacte" class="mobile-menu-link lca">Contacte</a>
-  <a href="Benestari%20Solucions.html#contacte" class="mobile-menu-link les" style="display:none">Contacto</a>
+  <a href="Benestari%20Solucions.html#contacte" class="mobile-menu-link les">Contacto</a>
 
   <a href="Benestari%20Solucions.html#contacte" class="mobile-menu-cta">
-    <span class="lca">Contacta'ns</span><span class="les" style="display:none">Contáctanos</span>
+    <span class="lca">Contacta'ns</span><span class="les">Contáctanos</span>
   </a>
 </div>
 <!-- MOBILE-MENU-END -->
@@ -552,51 +614,46 @@
     <span class="les">12 productos disponibles</span>
   </p>
   <div class="prod-grid">
-      <a href="producto-presoterapia-inalambrica-mister-relax.html" class="prod-card reveal">
-        <div class="prod-thumb"><img src="IMG_TERAPIA/IMG_PRESOTERAPIA%20INAL%C3%81MBRICA%20MISTER%20RELAX/IMG_1.jpg" alt="PRESOTERAPIA INALÁMBRICA MÍSTER RELAX" style="width:100%;height:100%;object-fit:contain;background:#f5f5f3;display:block;" loading="lazy"></div>
+      <article class="prod-card reveal">
+        <div class="prod-thumb"><img src="IMG_TERAPIA/IMG_PRESOTERAPIA%20INAL%C3%81MBRICA%20MISTER%20RELAX/IMG_1.png" alt="PRESOTERAPIA INALÁMBRICA MÍSTER RELAX" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit;" loading="lazy"></div>
         <div class="prod-body">
           <h3 class="prod-name"><span class="lca">PRESSOTERÀPIA SENSE FILS MÍSTER RELAX</span><span class="les">PRESOTERAPIA INALÁMBRICA MÍSTER RELAX</span></h3>
-          
-          <a href="producto-presoterapia-inalambrica-mister-relax.html" class="prod-cta lca">Veure producte &#8594;</a>
-          <a href="producto-presoterapia-inalambrica-mister-relax.html" class="prod-cta les">Ver producto &#8594;</a>
+          <p class="prod-desc"><span class="lca">Pressoteràpia inalàmbrica per millorar la circulació, reduir la retenció de líquids i alleujar la sensació de cames pesades.</span><span class="les">Presoterapia inalámbrica para mejorar la circulación, reducir la retención de líquidos y aliviar la sensación de piernas pesadas.</span></p>
+          <a href="producto-presoterapia-inalambrica-mister-relax.html" class="prod-cta"><span class="lca">Veure producte</span><span class="les">Ver producto</span><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         </div>
-      </a>
-      <a href="producto-presoterapia-quattro-max.html" class="prod-card reveal">
-        <div class="prod-thumb"><img src="IMG_TERAPIA/IMG_PRESOTERAPIA%20QUATTRO%20MAX/IMG_1.jpg" alt="PRESOTERAPIA QUATTRO MAX" style="width:100%;height:100%;object-fit:contain;background:#f5f5f3;display:block;" loading="lazy"></div>
+      </article>
+      <article class="prod-card reveal">
+        <div class="prod-thumb"><img src="IMG_TERAPIA/IMG_PRESOTERAPIA%20QUATTRO%20MAX/IMG_1.png" alt="PRESOTERAPIA QUATTRO MAX" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit;" loading="lazy"></div>
         <div class="prod-body">
           <h3 class="prod-name"><span class="lca">PRESSOTERÀPIA QUATTRO MAX</span><span class="les">PRESOTERAPIA QUATTRO MAX</span></h3>
-          
-          <a href="producto-presoterapia-quattro-max.html" class="prod-cta lca">Veure producte &#8594;</a>
-          <a href="producto-presoterapia-quattro-max.html" class="prod-cta les">Ver producto &#8594;</a>
+          <p class="prod-desc"><span class="lca">Sistema de pressoteràpia d'alta eficàcia amb 4 cambres independents. Tractament professional per a casa.</span><span class="les">Sistema de presoterapia de alta eficacia con 4 cámaras independientes. Tratamiento profesional para casa.</span></p>
+          <a href="producto-presoterapia-quattro-max.html" class="prod-cta"><span class="lca">Veure producte</span><span class="les">Ver producto</span><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         </div>
-      </a>
-      <a href="producto-chip-scudo-personal.html" class="prod-card reveal">
-        <div class="prod-thumb"><img src="IMG_TERAPIA/IMG_Chip%20SCUDO%20Personal/IMG_Chip%20SCUDO%20Personal.jpg" alt="CHIP SCUDO PERSONAL" style="width:100%;height:100%;object-fit:contain;background:#f5f5f3;display:block;" loading="lazy"></div>
+      </article>
+      <article class="prod-card reveal">
+        <div class="prod-thumb"><img src="IMG_TERAPIA/IMG_Chip%20SCUDO%20Personal/IMG_Chip%20SCUDO%20Personal.jpg" alt="CHIP SCUDO PERSONAL" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit;" loading="lazy"></div>
         <div class="prod-body">
           <h3 class="prod-name"><span class="lca">CHIP SCUDO PERSONAL</span><span class="les">CHIP SCUDO PERSONAL</span></h3>
-          
-          <a href="producto-chip-scudo-personal.html" class="prod-cta lca">Veure producte &#8594;</a>
-          <a href="producto-chip-scudo-personal.html" class="prod-cta les">Ver producto &#8594;</a>
+          <p class="prod-desc"><span class="lca">Dispositiu personal de protecció davant la contaminació electromagnètica. Tecnologia SCUDO® per portar sempre.</span><span class="les">Dispositivo personal de protección frente a la contaminación electromagnética. Tecnología SCUDO® para llevar siempre.</span></p>
+          <a href="producto-chip-scudo-personal.html" class="prod-cta"><span class="lca">Veure producte</span><span class="les">Ver producto</span><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         </div>
-      </a>
-      <a href="producto-piramide-scudo-home.html" class="prod-card reveal">
-        <div class="prod-thumb"><img src="IMG_TERAPIA/IMG_Piramide%20SCUDO/IMG_1.jpg" alt="PIRÁMIDE SCUDO HOME PROTECTION" style="width:100%;height:100%;object-fit:contain;background:#f5f5f3;display:block;" loading="lazy"></div>
+      </article>
+      <article class="prod-card reveal">
+        <div class="prod-thumb"><img src="IMG_TERAPIA/IMG_Piramide%20SCUDO/IMG_1.jpg" alt="PIRÁMIDE SCUDO HOME PROTECTION" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit;" loading="lazy"></div>
         <div class="prod-body">
           <h3 class="prod-name"><span class="lca">PIRÀMIDE SCUDO HOME PROTECTION</span><span class="les">PIRÁMIDE SCUDO HOME PROTECTION</span></h3>
-          
-          <a href="producto-piramide-scudo-home.html" class="prod-cta lca">Veure producte &#8594;</a>
-          <a href="producto-piramide-scudo-home.html" class="prod-cta les">Ver producto &#8594;</a>
+          <p class="prod-desc"><span class="lca">Protecció electromagnètica per a tota la llar. Tecnologia SCUDO® contra Wi-Fi, Bluetooth i microones.</span><span class="les">Protección electromagnética para todo el hogar. Tecnología SCUDO® contra Wi-Fi, Bluetooth y microondas.</span></p>
+          <a href="producto-piramide-scudo-home.html" class="prod-cta"><span class="lca">Veure producte</span><span class="les">Ver producto</span><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         </div>
-      </a>
-      <a href="producto-new-magnetic-poket.html" class="prod-card reveal">
-        <div class="prod-thumb"><img src="IMG_TERAPIA/IMG_New%20Magnetic%20Poket/IMG_1.png" alt="NEW MAGNETIC POKET" style="width:100%;height:100%;object-fit:contain;background:#f5f5f3;display:block;" loading="lazy"></div>
+      </article>
+      <article class="prod-card reveal">
+        <div class="prod-thumb"><img src="IMG_TERAPIA/IMG_New%20Magnetic%20Poket/IMG_1.png" alt="NEW MAGNETIC POKET" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit;" loading="lazy"></div>
         <div class="prod-body">
           <h3 class="prod-name"><span class="lca">NEW MAGNETIC POKET</span><span class="les">NEW MAGNETIC POKET</span></h3>
-          <div class="prod-price">1.490 €</div>
-          <a href="producto-new-magnetic-poket.html" class="prod-cta lca">Veure producte &#8594;</a>
-          <a href="producto-new-magnetic-poket.html" class="prod-cta les">Ver producto &#8594;</a>
+          <p class="prod-desc"><span class="lca">Magnetoteràpia portàtil d'alta freqüència. Acció analgèsica i antiinflamatòria per a dolors musculars i articulars.</span><span class="les">Magnetoterapia portátil de alta frecuencia. Acción analgésica y antiinflamatoria para dolores musculares y articulares.</span></p>
+          <a href="producto-new-magnetic-poket.html" class="prod-cta"><span class="lca">Veure producte</span><span class="les">Ver producto</span><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         </div>
-      </a>
+      </article>
     </div>
     </section>
 
