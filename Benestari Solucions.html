@@ -631,13 +631,20 @@
       .lang-btn { padding: 3px 9px !important; font-size: 11px !important; }
 
       /* Hero */
-      #inici { padding: 96px 20px 0; }
+      #inici {
+        min-height: 100dvh;
+        justify-content: flex-start;
+        padding: 96px 20px 44px;
+      }
+      .hero-overlay {
+        background: linear-gradient(180deg, rgba(10,30,14,.70) 0%, rgba(10,30,14,.52) 50%, rgba(10,30,14,.82) 100%);
+      }
       .hero-badge { font-size: 11px; padding: 5px 12px; margin-bottom: 16px; }
       .hero-h1 { font-size: clamp(34px, 9vw, 50px); margin-bottom: 14px; line-height: 1.08; }
       .hero-sub { font-size: 15px; margin-bottom: 24px; }
       .hero-actions { flex-direction: column; gap: 10px; }
       .btn-hero, .btn-hero-ghost { width: 100%; justify-content: center; padding: 14px 20px; font-size: 15px; }
-      .hero-stats { gap: 0; flex-wrap: nowrap; padding: 20px 0 28px; justify-content: space-between; }
+      .hero-stats { gap: 0; flex-wrap: nowrap; margin-top: auto; padding: 28px 0 0; justify-content: space-between; border-top: 1px solid rgba(255,255,255,.18); }
       .hero-stat-num { font-size: 20px; }
       .hero-stat-label { font-size: 10px; margin-top: 3px; }
       .hero-scroll { display: none; }
