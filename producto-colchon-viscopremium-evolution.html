@@ -150,6 +150,19 @@
     .mobile-prod-sub .nav-dropdown-icon { width: 26px; height: 26px; border-radius: 7px; background: var(--green-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
     .mobile-menu-cta { display: flex; align-items: center; justify-content: center; margin-top: 22px; background: var(--green); color: white; padding: 16px 24px; border-radius: 12px; font-size: 16px; font-weight: 700; text-decoration: none; min-height: 52px; }
     @media (max-width: 768px) {
+      /* ── MOBILE COMPACT FIX ── */
+      html, body { overflow-x: hidden; }
+      body { word-break: break-word; overflow-wrap: break-word; }
+      img, video, iframe { max-width: 100%; height: auto; }
+      .footer-grid { grid-template-columns: 1fr !important; gap: 20px; }
+      .footer-bottom { flex-wrap: wrap; gap: 6px; }
+      .breadcrumb { flex-wrap: wrap; }
+      /* Stack trust items vertically to avoid overflow */
+      .prod-trust { flex-direction: column !important; gap: 8px; }
+      /* Compact font sizes */
+      .prod-info-name { font-size: clamp(19px,5vw,24px) !important; }
+      .prod-price { font-size: clamp(22px,5.5vw,28px) !important; }
+      .prod-info-desc, .feat-item span { font-size: 14px; }
       .nav-mobile-btn { display: flex; } .mobile-menu { display: block; }
       .nav-links { display: none !important; } .btn-nav-cta { display: none !important; }
       .btn-primary, .btn-outline, .btn-submit { min-height: 48px; }
@@ -159,9 +172,9 @@
       nav { padding-left: max(20px, env(safe-area-inset-left)); padding-right: max(20px, env(safe-area-inset-right)); }
       footer { padding-bottom: max(32px, env(safe-area-inset-bottom)); }
       .product-main { grid-template-columns: 1fr !important; gap: 24px; padding: clamp(20px,5vw,40px) clamp(18px,5vw,32px); }
-      .gallery { position: static !important; gap: 10px; }
+      .gallery { position: static !important; gap: 10px; overflow: hidden; /* gallery scroll contain */ }
       .gallery-main { aspect-ratio: 4/3 !important; border-radius: 18px; max-height: 300px; }
-      .gallery-thumbs { display: flex !important; flex-direction: row !important; overflow-x: auto; gap: 8px; padding-bottom: 4px; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+      .gallery-thumbs { width: 100% !important; display: flex !important; flex-direction: row !important; overflow-x: auto; gap: 8px; padding-bottom: 4px; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
       .gallery-thumbs::-webkit-scrollbar { display: none; }
       .gallery-thumb { flex: 0 0 68px !important; width: 68px !important; height: 68px !important; border-radius: 10px; }
       .prod-info-name { font-size: clamp(20px,5vw,26px); }
@@ -365,6 +378,8 @@
         <li><a href="mailto:benestarisolucions@gmail.com">benestarisolucions@gmail.com</a></li>
         <li><a href="tel:+34623412836">+34 623 41 28 36</a></li>
         <li><a href="Benestari%20Solucions.html#contacte" class="lca">Formulari de contacte</a><a href="Benestari%20Solucions.html#contacte" class="les">Formulario de contacto</a></li>
+        <li><a href="politica-privacitat.html" class="lca">Política de privacitat</a><a href="politica-privacitat.html" class="les">Política de privacidad</a></li>
+        <li><a href="politica-cookies.html" class="lca">Política de cookies</a><a href="politica-cookies.html" class="les">Política de cookies</a></li>
       </ul>
     </div>
   </div>

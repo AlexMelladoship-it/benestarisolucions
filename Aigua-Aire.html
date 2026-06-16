@@ -218,6 +218,19 @@
        GLOBAL TOUCH & ACCESSIBILITY
     ═══════════════════════════════════════════════ */
     @media (max-width: 768px) {
+      /* ── MOBILE COMPACT FIX ── */
+      html, body { overflow-x: hidden; }
+      body { word-break: break-word; overflow-wrap: break-word; }
+      img, video, iframe { max-width: 100%; height: auto; }
+      .footer-grid { grid-template-columns: 1fr !important; gap: 20px; }
+      .footer-bottom { flex-wrap: wrap; gap: 6px; }
+      .breadcrumb { flex-wrap: wrap; }
+      /* Stack trust items vertically to avoid overflow */
+      .prod-trust { flex-direction: column !important; gap: 8px; }
+      /* Compact font sizes */
+      .prod-info-name { font-size: clamp(19px,5vw,24px) !important; }
+      .prod-price { font-size: clamp(22px,5.5vw,28px) !important; }
+      .prod-info-desc, .feat-item span { font-size: 14px; }
       /* Show hamburger, hide desktop nav */
       .nav-mobile-btn { display: flex; }
       .mobile-menu { display: block; }
@@ -331,7 +344,7 @@
       .cat-grid { grid-template-columns: 1fr; }
       .hero-stats { flex-direction: column; gap: 12px; }
       .hero-badge { font-size: 11px; }
-      .nav-logo-text { display: none; }
+      
     }
 
     /* ═══════════════════════════════════════════════
@@ -642,7 +655,7 @@
     <div><img src="uploads/logo_benestarisolucions.png" alt="Benestari Solucions" class="footer-logo-img" loading="lazy"><div class="footer-brand-name">benestarisolucions</div><p class="footer-brand-desc"><span class="lca">Productes per al benestar i la salut de les persones.</span><span class="les">Productos para el bienestar y la salud de las personas.</span></p></div>
     <div class="footer-col"><h4><span class="lca">Empresa</span><span class="les">Empresa</span></h4><ul><li><a href="Benestari Solucions.html#qui-som"><span class="lca">Qui som</span><span class="les">Quiénes somos</span></a></li><li><a href="Benestari Solucions.html#serveis"><span class="lca">Serveis</span><span class="les">Servicios</span></a></li><li><a href="Benestari Solucions.html#blog">Blog</a></li><li><a href="Benestari Solucions.html#contacte"><span class="lca">Contacte</span><span class="les">Contacto</span></a></li></ul></div>
     <div class="footer-col"><h4><span class="lca">Productes</span><span class="les">Productos</span></h4><ul><li><a href="Descans.html"><span class="lca">Descans</span><span class="les">Descanso</span></a></li><li><a href="Terapia.html"><span class="lca">Benestar</span><span class="les">Bienestar</span></a></li><li><a href="Aigua-Aire.html"><span class="lca">Aigua i Tractament</span><span class="les">Agua y Tratamiento</span></a></li><li><a href="Llar.html"><span class="lca">Llar</span><span class="les">Hogar</span></a></li></ul></div>
-    <div class="footer-col"><h4>Legal</h4><ul><li><a href="#"><span class="lca">Política de privacitat</span><span class="les">Política de privacidad</span></a></li><li><a href="#"><span class="lca">Avís legal</span><span class="les">Aviso legal</span></a></li></ul></div>
+    <div class="footer-col"><h4>Legal</h4><ul><li><a href="politica-privacitat.html"><span class="lca">Política de privacitat</span><span class="les">Política de privacidad</span></a></li><li><a href="#"><span class="lca">Avís legal</span><span class="les">Aviso legal</span></a></li></ul></div>
   </div>
   <div class="footer-bottom"><span>© 2025 Benestar i Solucions S.L.</span><span><span class="lca">Fet amb ♥ a Catalunya</span><span class="les">Hecho con ♥ en Cataluña</span></span></div>
 </footer>

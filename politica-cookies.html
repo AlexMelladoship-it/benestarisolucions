@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Política de cookies de Benestari Solucions. Informació sobre l'ús de cookies en el nostre lloc web d'acord amb la normativa vigent.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#3d8f4e">
+  <link rel="canonical" href="https://www.benestarisolucions.com/politica-cookies.html">
+  <title>Política de Cookies — Benestari Solucions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green:       oklch(0.62 0.22 136);
+      --green-mid:   oklch(0.50 0.20 136);
+      --green-dark:  oklch(0.32 0.14 136);
+      --green-light: oklch(0.95 0.05 136);
+      --green-pale:  oklch(0.98 0.02 136);
+      --white:       #FAFAF8;
+      --text:        oklch(0.16 0.02 136);
+      --text-mid:    oklch(0.35 0.03 136);
+      --muted:       oklch(0.55 0.03 136);
+      --border:      oklch(0.89 0.025 136);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--white); color: var(--text); font-size: 17px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    html[lang="ca"] .les { display: none; }
+    html[lang="es"] .lca { display: none; }
+
+    /* NAV */
+    nav.main-nav { position: sticky; top: 0; z-index: 100; background: rgba(250,250,248,0.92); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 0 clamp(20px,6vw,80px); height: 70px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo img { height: 34px; width: auto; }
+    .nav-logo-text { font-size: 16px; font-weight: 700; color: var(--green-dark); letter-spacing: -0.02em; }
+    .nav-links { display: flex; align-items: center; gap: 2px; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--text-mid); font-size: 15px; font-weight: 500; padding: 6px 14px; border-radius: 8px; transition: color .2s, background .2s; white-space: nowrap; }
+    .nav-links a:hover { color: var(--green); background: var(--green-light); }
+    .nav-right { display: flex; align-items: center; gap: 14px; }
+    .lang-toggle { display: flex; background: var(--green-light); border-radius: 8px; padding: 3px; gap: 2px; }
+    .lang-btn { border: none; background: transparent; padding: 4px 11px; border-radius: 6px; font-size: 13px; font-weight: 700; cursor: pointer; color: var(--muted); transition: all .2s; font-family: 'DM Sans', sans-serif; }
+    .lang-btn.active { background: white; color: var(--green); box-shadow: 0 1px 4px rgba(0,0,0,.1); }
+    .btn-nav-cta { background: var(--green); color: white; padding: 9px 20px; border-radius: 10px; text-decoration: none; font-size: 14px; font-weight: 600; transition: background .2s; white-space: nowrap; }
+    .btn-nav-cta:hover { background: var(--green-mid); }
+    .nav-has-dropdown { position: relative; }
+    .nav-has-dropdown > a { display: flex; align-items: center; gap: 4px; }
+    .nav-chevron { font-size: 10px; display: inline-block; transition: transform .2s; }
+    .nav-has-dropdown:hover .nav-chevron, .nav-has-dropdown:focus-within .nav-chevron { transform: rotate(180deg); }
+    .nav-dropdown { position: absolute; top: calc(100% + 10px); left: 50%; transform: translateX(-50%) translateY(-6px); background: white; border: 1px solid var(--border); border-radius: 14px; padding: 6px; box-shadow: 0 10px 36px rgba(0,0,0,.11); min-width: 210px; opacity: 0; pointer-events: none; transition: opacity .18s, transform .18s; z-index: 200; }
+    .nav-has-dropdown:hover .nav-dropdown, .nav-has-dropdown:focus-within .nav-dropdown { opacity: 1; pointer-events: auto; transform: translateX(-50%) translateY(0); }
+    .nav-dropdown a { display: flex; align-items: center; gap: 10px; padding: 9px 13px; border-radius: 9px; font-size: 14px; font-weight: 500; color: var(--text-mid); text-decoration: none; transition: background .15s, color .15s; }
+    .nav-dropdown a:hover { background: var(--green-light); color: var(--green); }
+    .nav-dropdown-icon { width: 28px; height: 28px; border-radius: 7px; background: var(--green-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+
+    /* LEGAL PAGE */
+    .legal-hero { background: var(--green-pale); padding: clamp(48px,7vw,80px) clamp(20px,6vw,80px) clamp(32px,5vw,56px); border-bottom: 1px solid var(--border); }
+    .legal-tag { display: inline-flex; align-items: center; gap: 7px; background: var(--green-light); color: var(--green-dark); padding: 5px 13px; border-radius: 100px; font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 18px; }
+    .legal-h1 { font-family: 'DM Serif Display', serif; font-size: clamp(28px,4vw,48px); font-weight: 400; line-height: 1.15; color: var(--text); letter-spacing: -0.02em; margin-bottom: 16px; }
+    .legal-meta { font-size: 14px; color: var(--muted); }
+
+    .legal-body { max-width: 800px; margin: 0 auto; padding: clamp(40px,6vw,72px) clamp(20px,6vw,80px); }
+    .legal-body p { color: var(--text-mid); font-size: 16px; line-height: 1.82; margin-bottom: 18px; }
+    .legal-body h2 { font-family: 'DM Serif Display', serif; font-size: clamp(20px,2.5vw,26px); font-weight: 400; color: var(--text); margin: 44px 0 14px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+    .legal-body h3 { font-size: 16px; font-weight: 700; color: var(--text); margin: 24px 0 8px; }
+    .legal-body ul, .legal-body ol { padding-left: 22px; margin-bottom: 18px; color: var(--text-mid); }
+    .legal-body li { margin-bottom: 6px; font-size: 16px; line-height: 1.7; }
+    .legal-body a { color: var(--green); text-decoration: none; }
+    .legal-body a:hover { text-decoration: underline; }
+    .legal-info-box { background: var(--green-pale); border: 1px solid oklch(0.89 0.06 136); border-radius: 16px; padding: 22px 24px; margin: 28px 0; }
+    .legal-info-box strong { display: block; font-size: 14px; font-weight: 700; color: var(--green-dark); text-transform: uppercase; letter-spacing: .05em; margin-bottom: 10px; }
+    .legal-info-box p { margin: 0; font-size: 15px; }
+    .legal-info-box p + p { margin-top: 6px; }
+
+    /* COOKIE TABLE */
+    .cookie-table-wrap { overflow-x: auto; margin: 18px 0 28px; -webkit-overflow-scrolling: touch; }
+    .cookie-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    .cookie-table th { background: var(--green-light); color: var(--green-dark); text-align: left; padding: 10px 14px; font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: .05em; }
+    .cookie-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); color: var(--text-mid); vertical-align: top; }
+    .cookie-table tr:last-child td { border-bottom: none; }
+    .cookie-table tr:hover td { background: var(--green-pale); }
+
+    /* FOOTER */
+    footer { background: var(--green-dark); color: rgba(255,255,255,.75); padding: 60px clamp(20px,6vw,80px) 32px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+    .footer-logo-img { height: 32px; width: auto; filter: brightness(0) invert(1); opacity: .85; margin-bottom: 14px; display: block; }
+    .footer-brand-name { font-size: 16px; font-weight: 700; color: white; margin-bottom: 10px; }
+    .footer-brand-desc { font-size: 14px; color: rgba(255,255,255,.5); line-height: 1.65; max-width: 270px; }
+    .footer-col h4 { font-size: 12px; font-weight: 700; color: white; text-transform: uppercase; letter-spacing: .07em; margin-bottom: 14px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+    .footer-col a { text-decoration: none; font-size: 14px; color: rgba(255,255,255,.55); transition: color .2s; }
+    .footer-col a:hover { color: white; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,.1); padding-top: 22px; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: rgba(255,255,255,.4); }
+
+    /* MOBILE NAV */
+    .nav-mobile-btn { display: none; flex-direction: column; justify-content: center; align-items: center; gap: 5px; width: 42px; height: 42px; background: var(--green-light); border: none; border-radius: 10px; cursor: pointer; padding: 4px; flex-shrink: 0; }
+    .nav-mobile-btn span { display: block; height: 2px; width: 20px; background: var(--green-dark); border-radius: 2px; transition: transform .25s ease, opacity .2s ease; }
+    .nav-mobile-btn.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-mobile-btn.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .nav-mobile-btn.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-menu { display: none; position: fixed; top: 70px; left: 0; right: 0; bottom: 0; background: var(--white); z-index: 98; overflow-y: auto; padding: 20px 24px 60px; opacity: 0; transform: translateY(-8px); transition: opacity .22s ease, transform .22s ease; pointer-events: none; }
+    .mobile-menu.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+    .mobile-menu-link { display: flex; align-items: center; padding: 15px 0; font-size: 17px; font-weight: 600; color: var(--text); text-decoration: none; border-bottom: 1px solid var(--border); min-height: 52px; }
+    .mobile-menu-link:hover { color: var(--green); }
+    .mobile-prod-toggle { display: flex; align-items: center; justify-content: space-between; width: 100%; padding: 15px 0; min-height: 52px; font-size: 17px; font-weight: 600; color: var(--text); background: none; border: none; border-bottom: 1px solid var(--border); cursor: pointer; font-family: 'DM Sans', sans-serif; text-align: left; }
+    .mobile-prod-chevron { font-size: 12px; transition: transform .2s; }
+    .mobile-prod-toggle.open .mobile-prod-chevron { transform: rotate(180deg); }
+    .mobile-prod-sub { display: none; flex-direction: column; padding: 6px 0 10px 16px; border-bottom: 1px solid var(--border); }
+    .mobile-prod-sub.open { display: flex; }
+    .mobile-prod-sub a { display: flex; align-items: center; gap: 10px; padding: 11px 0; min-height: 44px; font-size: 15px; font-weight: 500; color: var(--text-mid); text-decoration: none; }
+    .mobile-prod-sub a:hover { color: var(--green); }
+    .mobile-prod-sub .nav-dropdown-icon { width: 26px; height: 26px; border-radius: 7px; background: var(--green-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .mobile-menu-cta { display: flex; align-items: center; justify-content: center; margin-top: 22px; background: var(--green); color: white; padding: 16px 24px; border-radius: 12px; font-size: 16px; font-weight: 700; text-decoration: none; min-height: 52px; }
+    .mobile-menu-cta:hover { background: var(--green-mid); }
+
+    @media (min-width: 769px) { .nav-mobile-btn { display: none !important; } .mobile-menu { display: none !important; } }
+    @media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 768px) {
+      html, body { overflow-x: hidden; }
+      body { word-break: break-word; overflow-wrap: break-word; }
+      .nav-mobile-btn { display: flex; }
+      .mobile-menu { display: block; }
+      .nav-links { display: none !important; }
+      .btn-nav-cta { display: none !important; }
+      .lang-toggle { padding: 2px; }
+      .lang-btn { padding: 3px 9px !important; font-size: 11px !important; }
+      nav { padding-left: max(20px, env(safe-area-inset-left)); padding-right: max(20px, env(safe-area-inset-right)); }
+      .footer-grid { grid-template-columns: 1fr !important; gap: 20px; }
+      .footer-bottom { flex-wrap: wrap; gap: 6px; }
+      footer { padding-bottom: max(32px, env(safe-area-inset-bottom)); }
+      .cookie-table th, .cookie-table td { padding: 8px 10px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="main-nav">
+  <a href="Benestari Solucions.html" class="nav-logo">
+    <img src="uploads/logo_benestarisolucions.png" alt="Benestari Solucions">
+    <span class="nav-logo-text">benestarisolucions</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="Benestari Solucions.html#qui-som"><span class="lca">Qui som</span><span class="les">Quiénes somos</span></a></li>
+    <li><a href="Benestari Solucions.html#serveis"><span class="lca">Serveis</span><span class="les">Servicios</span></a></li>
+    <li class="nav-has-dropdown">
+      <a href="Benestari Solucions.html#categories"><span class="lca">Productes</span><span class="les">Productos</span> <span class="nav-chevron">▾</span></a>
+      <div class="nav-dropdown">
+        <a href="Descans.html"><span class="nav-dropdown-icon"><svg width="14" height="14" fill="none" stroke="var(--green)" stroke-width="2" viewBox="0 0 24 24"><path d="M2 9a3 3 0 0 1 3-3h14a3 3 0 0 1 3 3v9H2V9z"/><path d="M2 18h20v2H2z"/></svg></span><span class="lca">Descans</span><span class="les">Descanso</span></a>
+        <a href="Terapia.html"><span class="nav-dropdown-icon"><svg width="14" height="14" fill="none" stroke="var(--green)" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2z"/><path d="M12 6v6l4 2"/></svg></span><span class="lca">Teràpia</span><span class="les">Terapia</span></a>
+        <a href="Aigua-Aire.html"><span class="nav-dropdown-icon"><svg width="14" height="14" fill="none" stroke="var(--green)" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2C6 8 4 12 4 14a8 8 0 0 0 16 0c0-2-2-6-8-12z"/></svg></span><span class="lca">Aigua i Tractament</span><span class="les">Agua y Tratamiento</span></a>
+        <a href="Llar.html"><span class="nav-dropdown-icon"><svg width="14" height="14" fill="none" stroke="var(--green)" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span><span class="lca">Llar</span><span class="les">Hogar</span></a>
+      </div>
+    </li>
+    <li><a href="Benestari Solucions.html#blog">Blog</a></li>
+    <li><a href="Benestari Solucions.html#contacte"><span class="lca">Contacte</span><span class="les">Contacto</span></a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="nav-mobile-btn" id="navMobileBtn" aria-label="Menú" aria-expanded="false"><span></span><span></span><span></span></button>
+    <div class="lang-toggle">
+      <button class="lang-btn active" id="btn-ca" onclick="setLang('ca')">CA</button>
+      <button class="lang-btn" id="btn-es" onclick="setLang('es')">ES</button>
+    </div>
+    <a href="Benestari Solucions.html#contacte" class="btn-nav-cta"><span class="lca">Contacta'ns</span><span class="les">Contáctanos</span></a>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="Benestari%20Solucions.html#qui-som" class="mobile-menu-link lca">Qui som</a>
+  <a href="Benestari%20Solucions.html#qui-som" class="mobile-menu-link les">Quiénes somos</a>
+  <a href="Benestari%20Solucions.html#serveis" class="mobile-menu-link lca">Serveis</a>
+  <a href="Benestari%20Solucions.html#serveis" class="mobile-menu-link les">Servicios</a>
+  <div>
+    <button class="mobile-prod-toggle" id="mobileProdBtn"><span class="lca">Productes</span><span class="les">Productos</span><span class="mobile-prod-chevron">▾</span></button>
+    <div class="mobile-prod-sub" id="mobileProdSub">
+      <a href="Descans.html"><span class="nav-dropdown-icon"><svg width="13" height="13" fill="none" stroke="var(--green)" stroke-width="2" viewBox="0 0 24 24"><path d="M2 9a3 3 0 0 1 3-3h14a3 3 0 0 1 3 3v9H2V9z"/><path d="M2 18h20v2H2z"/></svg></span><span class="lca">Descans</span><span class="les">Descanso</span></a>
+      <a href="Terapia.html"><span class="nav-dropdown-icon"><svg width="13" height="13" fill="none" stroke="var(--green)" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2z"/><path d="M12 6v6l4 2"/></svg></span><span class="lca">Teràpia</span><span class="les">Terapia</span></a>
+      <a href="Aigua-Aire.html"><span class="nav-dropdown-icon"><svg width="13" height="13" fill="none" stroke="var(--green)" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2C6 8 4 12 4 14a8 8 0 0 0 16 0c0-2-2-6-8-12z"/></svg></span><span class="lca">Aigua i Tractament</span><span class="les">Agua y Tratamiento</span></a>
+      <a href="Llar.html"><span class="nav-dropdown-icon"><svg width="13" height="13" fill="none" stroke="var(--green)" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span><span class="lca">Llar</span><span class="les">Hogar</span></a>
+    </div>
+  </div>
+  <a href="Benestari%20Solucions.html#blog" class="mobile-menu-link">Blog</a>
+  <a href="Benestari%20Solucions.html#contacte" class="mobile-menu-link lca">Contacte</a>
+  <a href="Benestari%20Solucions.html#contacte" class="mobile-menu-link les">Contacto</a>
+  <a href="Benestari%20Solucions.html#contacte" class="mobile-menu-cta"><span class="lca">Contacta'ns</span><span class="les">Contáctanos</span></a>
+</div>
+
+<!-- HERO -->
+<div class="legal-hero">
+  <div class="legal-tag">
+    <svg width="10" height="10" viewBox="0 0 10 10" fill="var(--green)"><circle cx="5" cy="5" r="5"/></svg>
+    <span class="lca">Legal</span><span class="les">Legal</span>
+  </div>
+  <h1 class="legal-h1">
+    <span class="lca">Política de Cookies</span>
+    <span class="les">Política de Cookies</span>
+  </h1>
+  <p class="legal-meta"><span class="lca">Última actualització: juny 2025</span><span class="les">Última actualización: junio 2025</span></p>
+</div>
+
+<!-- BODY CA -->
+<div class="lca">
+  <main class="legal-body">
+
+    <p>Aquesta pàgina explica com el lloc web <strong>benestarisolucions.com</strong>, titularitat de <strong>Benestar i Solucions S.L.</strong>, utilitza cookies i tecnologies similars, d'acord amb la Llei 34/2002 de Serveis de la Societat de la Informació (LSSI) i el Reglament (UE) 2016/679 (RGPD).</p>
+
+    <h2>1. Què és una cookie?</h2>
+    <p>Una cookie és un fitxer petit de text que un lloc web emmagatzema al seu dispositiu (ordinador, tauleta o mòbil) quan el visita. Les cookies permeten que el lloc web recordi les seves preferències, millori el seu funcionament i ofereixi contingut personalitzat.</p>
+
+    <h2>2. Quines cookies utilitza aquest lloc web?</h2>
+    <p>Actualment, <strong>benestarisolucions.com</strong> utilitza únicament la cookie tècnica necessària per al funcionament del selector d'idioma (CA/ES). No fem servir cookies de publicitat, de seguiment ni de tercers.</p>
+
+    <div class="cookie-table-wrap">
+      <table class="cookie-table">
+        <thead>
+          <tr>
+            <th>Nom</th>
+            <th>Tipus</th>
+            <th>Finalitat</th>
+            <th>Durada</th>
+            <th>Propi / Tercer</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>bs-lang</strong></td>
+            <td>Tècnica (localStorage)</td>
+            <td>Desa la preferència d'idioma (català o castellà) de l'usuari</td>
+            <td>Persistent (fins que l'usuari l'esborra)</td>
+            <td>Propi</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="legal-info-box">
+      <strong>Nota sobre localStorage</strong>
+      <p>La preferència d'idioma es guarda al <em>localStorage</em> del seu navegador, no en una cookie HTTP convencional. Funciona de manera similar però no s'envia al servidor en cada petició. No requereix consentiment previ, ja que és estrictament necessari per al funcionament correcte del lloc.</p>
+    </div>
+
+    <h2>3. Cookies de tercers</h2>
+    <p>Aquest lloc web no inclou cookies de tercers ni píxels de seguiment. No fem servir serveis d'analítica web (com Google Analytics), xarxes publicitàries ni eines de seguiment de comportament de l'usuari.</p>
+    <p>Si en el futur incorporéssim algun d'aquests serveis, actualitzarem aquesta pàgina i demanarem el seu consentiment previ quan escaigui.</p>
+
+    <h2>4. Com gestionar o eliminar les cookies</h2>
+    <p>Pot gestionar les cookies i la memòria local des de la configuració del seu navegador. A continuació trobarà instruccions per als navegadors més habituals:</p>
+    <ul>
+      <li><strong>Google Chrome:</strong> Configuració → Privadesa i seguretat → Cookies i altres dades del lloc</li>
+      <li><strong>Mozilla Firefox:</strong> Configuració → Privadesa i seguretat → Cookies i dades del lloc</li>
+      <li><strong>Safari:</strong> Preferències → Privadesa → Gestionar dades del lloc web</li>
+      <li><strong>Microsoft Edge:</strong> Configuració → Privadesa, cerca i serveis → Cookies i permisos del lloc</li>
+    </ul>
+    <p>Tingui en compte que si elimina la preferència d'idioma, la propera vegada que visiti el lloc es mostrarà en català per defecte.</p>
+
+    <h2>5. Actualitzacions d'aquesta política</h2>
+    <p>Benestar i Solucions S.L. pot actualitzar aquesta Política de Cookies per adaptar-la a canvis en el lloc web o en la normativa aplicable. Qualsevol modificació es publicarà en aquesta pàgina amb la data d'actualització corresponent.</p>
+
+    <h2>6. Contacte</h2>
+    <p>Si té alguna pregunta sobre l'ús de cookies en aquest lloc web, pot contactar-nos a:</p>
+    <div class="legal-info-box">
+      <strong>Benestar i Solucions S.L.</strong>
+      <p>Correu electrònic: <a href="mailto:benestarisolucions@gmail.com">benestarisolucions@gmail.com</a></p>
+      <p>Telèfon: <a href="tel:+34623412836">+34 623 412 836</a></p>
+    </div>
+    <p>Per a més informació sobre el tractament de les seves dades personals, consulteu la nostra <a href="politica-privacitat.html">Política de Privacitat</a>.</p>
+
+  </main>
+</div>
+
+<!-- BODY ES -->
+<div class="les">
+  <main class="legal-body">
+
+    <p>Esta página explica cómo el sitio web <strong>benestarisolucions.com</strong>, titularidad de <strong>Benestar i Solucions S.L.</strong>, utiliza cookies y tecnologías similares, de acuerdo con la Ley 34/2002 de Servicios de la Sociedad de la Información (LSSI) y el Reglamento (UE) 2016/679 (RGPD).</p>
+
+    <h2>1. ¿Qué es una cookie?</h2>
+    <p>Una cookie es un pequeño archivo de texto que un sitio web almacena en su dispositivo (ordenador, tableta o móvil) cuando lo visita. Las cookies permiten que el sitio web recuerde sus preferencias, mejore su funcionamiento y ofrezca contenido personalizado.</p>
+
+    <h2>2. ¿Qué cookies utiliza este sitio web?</h2>
+    <p>Actualmente, <strong>benestarisolucions.com</strong> utiliza únicamente la cookie técnica necesaria para el funcionamiento del selector de idioma (CA/ES). No usamos cookies de publicidad, de seguimiento ni de terceros.</p>
+
+    <div class="cookie-table-wrap">
+      <table class="cookie-table">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Tipo</th>
+            <th>Finalidad</th>
+            <th>Duración</th>
+            <th>Propio / Tercero</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>bs-lang</strong></td>
+            <td>Técnica (localStorage)</td>
+            <td>Guarda la preferencia de idioma (catalán o castellano) del usuario</td>
+            <td>Persistente (hasta que el usuario la borra)</td>
+            <td>Propio</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="legal-info-box">
+      <strong>Nota sobre localStorage</strong>
+      <p>La preferencia de idioma se guarda en el <em>localStorage</em> del navegador, no en una cookie HTTP convencional. Funciona de manera similar pero no se envía al servidor en cada petición. No requiere consentimiento previo, ya que es estrictamente necesario para el correcto funcionamiento del sitio.</p>
+    </div>
+
+    <h2>3. Cookies de terceros</h2>
+    <p>Este sitio web no incluye cookies de terceros ni píxeles de seguimiento. No usamos servicios de analítica web (como Google Analytics), redes publicitarias ni herramientas de seguimiento del comportamiento del usuario.</p>
+    <p>Si en el futuro incorporásemos alguno de estos servicios, actualizaremos esta página y solicitaremos su consentimiento previo cuando corresponda.</p>
+
+    <h2>4. Cómo gestionar o eliminar las cookies</h2>
+    <p>Puede gestionar las cookies y la memoria local desde la configuración de su navegador. A continuación encontrará instrucciones para los navegadores más habituales:</p>
+    <ul>
+      <li><strong>Google Chrome:</strong> Configuración → Privacidad y seguridad → Cookies y otros datos de sitios</li>
+      <li><strong>Mozilla Firefox:</strong> Configuración → Privacidad y seguridad → Cookies y datos del sitio</li>
+      <li><strong>Safari:</strong> Preferencias → Privacidad → Gestionar datos del sitio web</li>
+      <li><strong>Microsoft Edge:</strong> Configuración → Privacidad, búsqueda y servicios → Cookies y permisos del sitio</li>
+    </ul>
+    <p>Tenga en cuenta que si elimina la preferencia de idioma, la próxima vez que visite el sitio se mostrará en catalán por defecto.</p>
+
+    <h2>5. Actualizaciones de esta política</h2>
+    <p>Benestar i Solucions S.L. puede actualizar esta Política de Cookies para adaptarla a cambios en el sitio web o en la normativa aplicable. Cualquier modificación se publicará en esta página con la fecha de actualización correspondiente.</p>
+
+    <h2>6. Contacto</h2>
+    <p>Si tiene alguna pregunta sobre el uso de cookies en este sitio web, puede contactarnos en:</p>
+    <div class="legal-info-box">
+      <strong>Benestar i Solucions S.L.</strong>
+      <p>Correo electrónico: <a href="mailto:benestarisolucions@gmail.com">benestarisolucions@gmail.com</a></p>
+      <p>Teléfono: <a href="tel:+34623412836">+34 623 412 836</a></p>
+    </div>
+    <p>Para más información sobre el tratamiento de sus datos personales, consulte nuestra <a href="politica-privacitat.html">Política de Privacidad</a>.</p>
+
+  </main>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <img src="uploads/logo_benestarisolucions.png" alt="Benestari Solucions" class="footer-logo-img" loading="lazy">
+      <div class="footer-brand-name">benestarisolucions</div>
+      <p class="footer-brand-desc">
+        <span class="lca">Productes per al benestar i la salut de les persones. Innovació, qualitat i compromís des de Catalunya.</span>
+        <span class="les">Productos para el bienestar y la salud de las personas. Innovación, calidad y compromiso desde Cataluña.</span>
+      </p>
+    </div>
+    <div class="footer-col">
+      <h4><span class="lca">Empresa</span><span class="les">Empresa</span></h4>
+      <ul>
+        <li><a href="Benestari%20Solucions.html#qui-som"><span class="lca">Qui som</span><span class="les">Quiénes somos</span></a></li>
+        <li><a href="Benestari%20Solucions.html#serveis"><span class="lca">Serveis</span><span class="les">Servicios</span></a></li>
+        <li><a href="Benestari%20Solucions.html#blog">Blog</a></li>
+        <li><a href="Benestari%20Solucions.html#contacte"><span class="lca">Contacte</span><span class="les">Contacto</span></a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4><span class="lca">Productes</span><span class="les">Productos</span></h4>
+      <ul>
+        <li><a href="Descans.html"><span class="lca">Descans</span><span class="les">Descanso</span></a></li>
+        <li><a href="Terapia.html"><span class="lca">Teràpia</span><span class="les">Terapia</span></a></li>
+        <li><a href="Aigua-Aire.html"><span class="lca">Aigua i Tractament</span><span class="les">Agua y Tratamiento</span></a></li>
+        <li><a href="Llar.html"><span class="lca">Llar</span><span class="les">Hogar</span></a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="politica-privacitat.html"><span class="lca">Política de privacitat</span><span class="les">Política de privacidad</span></a></li>
+        <li><a href="politica-cookies.html"><span class="lca">Política de cookies</span><span class="les">Política de cookies</span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span><span class="lca">© 2025 Benestar i Solucions S.L. Tots els drets reservats.</span><span class="les">© 2025 Benestar i Solucions S.L. Todos los derechos reservados.</span></span>
+    <span><span class="lca">Fet amb ♥ a Catalunya</span><span class="les">Hecho con ♥ en Cataluña</span></span>
+  </div>
+</footer>
+
+<script>
+function setLang(l) {
+  document.documentElement.lang = l;
+  localStorage.setItem('bs-lang', l);
+  document.getElementById('btn-ca').classList.toggle('active', l === 'ca');
+  document.getElementById('btn-es').classList.toggle('active', l === 'es');
+}
+(function() {
+  const l = localStorage.getItem('bs-lang') || 'ca';
+  document.documentElement.lang = l;
+  document.getElementById('btn-ca').classList.toggle('active', l === 'ca');
+  document.getElementById('btn-es').classList.toggle('active', l === 'es');
+})();
+(function() {
+  const btn = document.getElementById('navMobileBtn');
+  const menu = document.getElementById('mobileMenu');
+  const prodBtn = document.getElementById('mobileProdBtn');
+  const prodSub = document.getElementById('mobileProdSub');
+  if (!btn || !menu) return;
+  btn.addEventListener('click', function() {
+    const open = menu.classList.toggle('visible');
+    btn.classList.toggle('open', open);
+    btn.setAttribute('aria-expanded', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  if (prodBtn && prodSub) {
+    prodBtn.addEventListener('click', function() {
+      const open = prodSub.classList.toggle('open');
+      prodBtn.classList.toggle('open', open);
+    });
+  }
+  menu.querySelectorAll('a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      menu.classList.remove('visible');
+      btn.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    });
+  });
+})();
+</script>
+</body>
+</html>

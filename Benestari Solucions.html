@@ -634,17 +634,21 @@
       #inici {
         min-height: 100dvh;
         justify-content: flex-start;
-        padding: 96px 20px 44px;
+        padding: 96px 20px 36px;
       }
+      .hero-bg .hero-photo { object-position: center 72%; }
       .hero-overlay {
-        background: linear-gradient(180deg, rgba(10,30,14,.70) 0%, rgba(10,30,14,.52) 50%, rgba(10,30,14,.82) 100%);
+        background: linear-gradient(180deg, rgba(10,30,14,.72) 0%, rgba(10,30,14,.48) 45%, rgba(10,30,14,.82) 100%);
+      }
+      .hero-inner {
+        display: flex; flex-direction: column; flex: 1;
       }
       .hero-badge { font-size: 11px; padding: 5px 12px; margin-bottom: 16px; }
       .hero-h1 { font-size: clamp(34px, 9vw, 50px); margin-bottom: 14px; line-height: 1.08; }
-      .hero-sub { font-size: 15px; margin-bottom: 24px; }
-      .hero-actions { flex-direction: column; gap: 10px; }
+      .hero-sub { font-size: 15px; margin-bottom: 0; }
+      .hero-actions { flex-direction: column; gap: 10px; margin-top: auto; padding-top: 32px; }
       .btn-hero, .btn-hero-ghost { width: 100%; justify-content: center; padding: 14px 20px; font-size: 15px; }
-      .hero-stats { gap: 0; flex-wrap: nowrap; margin-top: auto; padding: 28px 0 0; justify-content: space-between; border-top: 1px solid rgba(255,255,255,.18); }
+      .hero-stats { gap: 0; flex-wrap: nowrap; margin-top: 28px; padding: 24px 0 0; justify-content: space-between; border-top: 1px solid rgba(255,255,255,.18); }
       .hero-stat-num { font-size: 20px; }
       .hero-stat-label { font-size: 10px; margin-top: 3px; }
       .hero-scroll { display: none; }
@@ -808,13 +812,7 @@
   <div class="hero-overlay"></div>
 
   <div class="hero-inner">
-    <div class="hero-badge hero-anim d1">
-      <span class="hero-badge-dot"></span>
-      <span class="lca">Benestar natural · Des de Catalunya</span>
-      <span class="les">Bienestar natural · Desde Cataluña</span>
-    </div>
-
-    <h1 class="hero-h1 hero-anim d2">
+    <h1 class="hero-h1 hero-anim d1">
       <span class="lca">El teu benestar,<br><em>la nostra missió</em></span>
       <span class="les">Tu bienestar,<br><em>nuestra misión</em></span>
     </h1>
@@ -1206,8 +1204,8 @@
     <div class="footer-col">
       <h4>Legal</h4>
       <ul>
-        <li><a href="#"><span class="lca">Política de privacitat</span><span class="les">Política de privacidad</span></a></li>
-        <li><a href="#"><span class="lca">Política de cookies</span><span class="les">Política de cookies</span></a></li>
+        <li><a href="politica-privacitat.html"><span class="lca">Política de privacitat</span><span class="les">Política de privacidad</span></a></li>
+        <li><a href="politica-cookies.html"><span class="lca">Política de cookies</span><span class="les">Política de cookies</span></a></li>
         <li><a href="#"><span class="lca">Avís legal</span><span class="les">Aviso legal</span></a></li>
       </ul>
     </div>
